@@ -24,7 +24,13 @@ WHERE district LIKE 'K%a' AND district NOT LIKE 'K% %a';
 по **18 июня 2005 года** **включительно** и стоимость которых превышает **10.00**.
 
 **Решение:**
-
+```
+SELECT payment_id, customer_id, staff_id, rental_id, amount, CAST(payment_date AS DATE)
+FROM payment
+WHERE payment_date BETWEEN  '2005-06-15' AND '2005-06-18 23:59:59'
+ORDER BY payment_date  ASC;
+```
+<kbd>![](img/sakila_payment_date_range.png)</kbd> 
 
 
 ### Задание 3
