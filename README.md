@@ -59,4 +59,8 @@ ORDER BY rental_id DESC LIMIT 5;
 - замените буквы 'll' в именах на 'pp'.
 
 **Решение:**
-
+```
+SELECT active, customer_id,LOWER(first_name),LOWER(last_name)
+FROM customer
+WHERE active = 1 AND (first_name LIKE 'Kelly' OR first_name  LIKE 'Willie');
+```
