@@ -18,6 +18,8 @@ WHERE district LIKE 'K%a' AND district NOT LIKE 'K% %a';
 ```
 <kbd>![](img/sakila_address_distinct_district.png)</kbd> 
 
+---
+
 ### Задание 2
 
 Получите из таблицы **платежей** за прокат фильмов информацию по платежам, которые выполнялись в промежуток **с 15 июня 2005 года** 
@@ -32,10 +34,21 @@ ORDER BY payment_date  ASC;
 ```
 <kbd>![](img/sakila_payment_date_range.png)</kbd> 
 
+---
 
 ### Задание 3
 
 Получите последние пять аренд фильмов.
+
+**Решение:**
+```
+SELECT rental_id, CAST(rental_date AS DATE),inventory_id, customer_id, staff_id 
+FROM rental
+ORDER BY rental_id DESC LIMIT 5;
+```
+<kbd>![](img/sakila_rental_id_greatest_5.png)</kbd> 
+
+---
 
 ### Задание 4
 
