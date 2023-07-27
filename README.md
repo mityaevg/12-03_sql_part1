@@ -60,7 +60,8 @@ ORDER BY rental_id DESC LIMIT 5;
 
 **Решение:**
 ```
-SELECT active, customer_id,LOWER(first_name),LOWER(last_name)
+SELECT active, customer_id, REPLACE(LOWER(first_name) , 'll', 'pp'), LOWER(last_name)
 FROM customer
 WHERE active = 1 AND (first_name LIKE 'Kelly' OR first_name  LIKE 'Willie');
 ```
+<kbd>![](img/sakila_active_customers.png)</kbd> 
